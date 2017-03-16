@@ -19,7 +19,7 @@ class Stack::Node //self-referential Node class
 Stack::~Stack()
 {
     while(num_elements > 0)
-      remove(1);
+      pop();
 }
 	
 int Stack::size()
@@ -32,9 +32,11 @@ void Stack::push(int val)
 	
 	
 	Node* newPtr = new Node{val};
-	
+	{
 	  newPtr->link = frontPtr;
 	  frontPtr = newPtr;
+	 }
+	 num_elements++;
 }
 
 void Stack::pop()
@@ -56,7 +58,7 @@ void Stack::clear()
 	{
 		while(num_elements!=0)
 		{
-			push(1);
+			pop();
 		}
 	}//clear
 	
