@@ -44,11 +44,11 @@ void Stack::pop()
 	
 	
 	Node* delPtr;
-	int del_data;
+	int deldata;
 	
 	  delPtr = frontPtr;
 	  frontPtr = frontPtr->link;
-	  del_data=delPtr->data;
+	  deldata=delPtr->data;
 	  delete delPtr;
 	  num_elements--;
 	
